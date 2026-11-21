@@ -1,19 +1,39 @@
 # p5.js Game Starter
 
-A minimal starter for browser sketches using p5.js and p5.play. It creates a 600 × 600 canvas and leaves the drawing loop ready for your own scene, sprites, and interactions.
+![JavaScript](https://img.shields.io/badge/JavaScript-p5.js-FB7D24?logo=p5dotjs&logoColor=white)
+![Status](https://img.shields.io/badge/project-starter%20template-lightgrey)
 
-## How the starter is wired
+A minimal browser sketch scaffold using p5.js and p5.play. It initializes a 600 × 600 canvas and provides an empty frame loop for building a game or interactive sketch.
 
-index.html loads local p5.js libraries, the stylesheet, and sketch.js. The sketch uses setup() for one-time canvas initialization and draw() for the repeated frame loop. At present, draw() paints a black background.
+## What it demonstrates
 
-## Stack
+- The p5.js lifecycle: preload, setup, and draw
+- Loading browser libraries from local script files
+- A simple project structure for canvas sketches
 
-HTML5, JavaScript, p5.js, p5.dom, p5.sound, p5.play, and CSS. Libraries are bundled in lib/; the stylesheet is in CSS/.
+## Current behavior
 
-## Run
+index.html loads p5.js, p5.dom, p5.sound, and p5.play from lib/, loads CSS/style.css, and then runs sketch.js. setup() creates the canvas; draw() currently paints a black background. No game mechanics or controls have been implemented yet.
 
-Open index.html in a browser. Keep lib/ and CSS/ at their current paths because the page loads those files locally. If the browser blocks local assets, serve the folder with a local static server.
+## Architecture
 
-## Start building
+Browser → index.html → local p5 libraries + sketch.js → canvas
 
-Put initialization and asset loading in preload() or setup(). Add frame-by-frame drawing and updates to draw(). Use the bundled p5.play library for sprites and collisions. There is no npm package manifest or build script.
+## Start locally
+
+Open index.html in a modern browser. Keep lib/ and CSS/ at their existing paths. If local script loading is blocked by the browser, serve the directory with a local static web server.
+
+## Project layout
+
+- index.html — script and stylesheet entry point
+- sketch.js — p5.js sketch lifecycle
+- CSS/style.css — page styling
+- lib/ — bundled p5.js and p5.play browser libraries
+
+## Extend the sketch
+
+Add asset loading to preload(), one-time initialization to setup(), and per-frame drawing or updates to draw(). Use the bundled p5.play library if you add sprites and collisions.
+
+## Limitations
+
+The repository has no package.json, build tool, automated tests, or application-specific dependencies. Libraries are loaded from the checked-in lib/ directory.
